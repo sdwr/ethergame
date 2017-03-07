@@ -46,7 +46,7 @@ while carryOn:
 
 	#Movement Input
 	keys = pygame.key.get_pressed()
-	player.player_movement(keys)	
+	player.actions(keys)	
 
 	#Draw to Screen
 	screen.fill(WHITE)

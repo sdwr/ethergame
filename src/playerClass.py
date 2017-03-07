@@ -1,9 +1,7 @@
 ###Player Object Class
 
 import pygame
-import globalVars
-from collisions import *
-
+import collisions
 
 class Player:
 	hp, speed, sprite, location = 0,0,0,0
@@ -14,7 +12,9 @@ class Player:
 		self.sprite = sprite
 		self.location = sprite.get_rect()
 
-	def player_movement(self, keys):
+	def actions(self, keys):
+
+		#movement
 		new_location = self.location.copy()
 
 		if keys[pygame.K_a]:
@@ -26,5 +26,13 @@ class Player:
 		if keys[pygame.K_s]:
 			new_location[1] += 10
 
-		if not doesCollide(new_location):
+		if not collisions.doesCollide(new_location):
 			self.location = new_location
+
+
+		#attacking
+
+
+	def canAttack():
+
+		return True

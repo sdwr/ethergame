@@ -15,7 +15,3 @@ def doesCollide(location):
 		return True
 	else:
 		return False
-
-
-numbers = [1,2,3]
-list = [x for x in numbers]
