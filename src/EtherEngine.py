@@ -20,9 +20,9 @@ pygame.display.set_caption("Crystal Ether")
 
 #--------------------------------------------------
 
-spr_player = pygame.image.load("spr_player.png")
-spr_background_one = pygame.image.load("spr_background_one.png")
-spr_wall = pygame.image.load("spr_wall.png")
+spr_player = pygame.image.load(spriteDirectory + "spr_player.png")
+spr_background_one = pygame.image.load(spriteDirectory + "spr_background_one.png")
+spr_wall = pygame.image.load(spriteDirectory + "spr_wall.png")
 
 #player_location = [x, y, xsize, ysize]
 player = Player(spr_player)
@@ -58,4 +58,3 @@ while carryOn:
 	screen.blit(player.sprite, player.location)
 
 	#Updating Display
-	pygame.display.flip()

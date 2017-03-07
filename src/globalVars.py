@@ -3,13 +3,17 @@
 import pygame
 import collisions
 
+global spriteDirectory 
+spriteDirectory = "../sprites/"
 
-global collision_handler 
+
 
 def initialize():
 	pygame.init()
 	global walls
-	global enemies
+	global enemies	
 
 	walls = []
 	enemies = []
+
+
