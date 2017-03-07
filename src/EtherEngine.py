@@ -31,6 +31,8 @@ wall = WallObject(location = [300, 0, 0, 0])
 
 clock = pygame.time.Clock()
 
+
+
 carryOn = True
 while carryOn:
 	clock.tick(60)
@@ -48,7 +50,8 @@ while carryOn:
 
 	#Draw to Screen
 	screen.fill(WHITE)
-	screen.blit(spr_background_one, [0, 0, 1400, 1000])
+
+	screen.blit(spr_background_one, spr_background_one.get_rect())
 	
 	#screen.blit(spr_wall, wall_location)
 	for wall in globalVars.walls:
@@ -58,3 +61,4 @@ while carryOn:
 	screen.blit(player.sprite, player.location)
 
 	#Updating Display
+	pygame.display.flip()
