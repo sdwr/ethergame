@@ -1,12 +1,24 @@
 ###Enemy Object Class
 
-import pygame
-import globalVars
+import random
 
-class EnemyObject:
+import pygame
+import globalVars as gv
+
+class Enemy:
 	hp, sprite, location = 0,0,0
+	speed = 3
 	
-	def __init__(self, location = [1, 1, 16, 16], sprite = pygame.image.load(globalVars.spriteDirectory + "spr_enemy.png"), hp = 3):
-		self.location = location[:2] + sprite.get_rect()[2:]
+	def __init__(self, coords = [50,50], sprite = pygame.image.load(gv.spriteDirectory + "spr_enemy.png"), hp = 3):
 		self.sprite = sprite
-		self.hp = hp
+		self.location = sprite.get_rect()
+		self.location[0] = coords[0]
+		self.location[1] = coords[1]
+
+
+	def randomWalk(self):
+		direction = gv.dirList[gv.rand.randrange(4)]
+		self.location[0] += direction[0] * self.speed
+		self.location[1] += direction[1] * self.speed
+
+

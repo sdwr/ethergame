@@ -1,15 +1,16 @@
 ###Wall Object Class
 
 import pygame
-import globalVars
+import globalVars as gv
 
-class WallObject:
-	sprite, location = 0,0
+class Wall:
+	sprite = 0
+	location = [0,0,0,0]
 	
-	def __init__(self, location = [1, 1, 16, 16], sprite = pygame.image.load(globalVars.spriteDirectory + "spr_wall.png")):
+	def __init__(self, coords = [1, 1], sprite = pygame.image.load(gv.spriteDirectory + "spr_wall.png")):
 		self.sprite = sprite
-		self.location = location.copy()
-		self.location[2] = sprite.get_rect()[2]
-		self.location[3] = sprite.get_rect()[3]
+		self.location = sprite.get_rect()
+		self.location[0] = coords[0]
+		self.location[1] = coords[1]
 
-		globalVars.walls.append(self)
+		gv.walls.append(self)
