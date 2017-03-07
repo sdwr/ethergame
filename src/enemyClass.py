@@ -7,7 +7,7 @@ import globalVars as gv
 
 class Enemy:
 	hp, sprite, location = 0,0,0
-	speed = 3
+	speed = 5
 	
 	def __init__(self, coords = [50,50], sprite = pygame.image.load(gv.spriteDirectory + "spr_enemy.png"), hp = 3):
 		self.sprite = sprite

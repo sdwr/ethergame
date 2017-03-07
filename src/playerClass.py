@@ -61,7 +61,5 @@ class Player:
 		attackLocation = [self.location[0], self.location[1]]
 		attackLocation = [a+(b*30) + 8 for a,b in zip(attackLocation,self.facing)]
 		newAttack = attackLocation + [30]
-		print(self.facing)
-		print(newAttack)
 
 		gv.effects.append(newAttack)
